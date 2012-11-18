@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -4663,6 +4663,23 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <text x="-15.24" y="-25.4" size="1.27" layer="95">&gt;name</text>
 <text x="10.16" y="-25.4" size="1.27" layer="96">&gt;name</text>
 </symbol>
+<symbol name="MCP1640">
+<wire x1="-10.16" y1="17.78" x2="10.16" y2="17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="17.78" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
+<pin name="VIN" x="-15.24" y="12.7" length="middle" direction="pwr"/>
+<pin name="EN" x="-15.24" y="-2.54" length="middle"/>
+<pin name="GND" x="0" y="-12.7" length="middle" direction="pwr" rot="R90"/>
+<pin name="VFB" x="15.24" y="-2.54" length="middle" rot="R180"/>
+<pin name="VOUT" x="15.24" y="12.7" length="middle" direction="pwr" rot="R180"/>
+<pin name="SW" x="0" y="22.86" length="middle" rot="R270"/>
+<text x="5.08" y="20.32" size="1.778" layer="95">&gt;name</text>
+<text x="2.54" y="-12.7" size="1.778" layer="96">&gt;value</text>
+</symbol>
+<symbol name="CIID-LABS">
+<text x="-5.08" y="0" size="5.08" layer="97">labs.ciid.dk</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="LTC4053EMSE-4.2">
@@ -5461,6 +5478,44 @@ step down DC/DC converter.</description>
 <connect gate="G$1" pin="VFB2" pad="10"/>
 <connect gate="G$1" pin="VIN" pad="3"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MCP1640">
+<description>The MCP1640/B/C/D is a compact, high-efficiency,
+fixed frequency, synchronous step-up DC-DC converter. It provides an easy-to-use power supply solution
+for applications powered by either one-cell, two-cell, or
+three-cell alkaline, NiCd, NiMH, one-cell Li-Ion or
+Li-Polymer batteries.</description>
+<gates>
+<gate name="G$1" symbol="MCP1640" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT23-6">
+<connects>
+<connect gate="G$1" pin="EN" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="SW" pad="1"/>
+<connect gate="G$1" pin="VFB" pad="4"/>
+<connect gate="G$1" pin="VIN" pad="6"/>
+<connect gate="G$1" pin="VOUT" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CIID-LABS">
+<description>made by labs.ciid.dk</description>
+<gates>
+<gate name="G$1" symbol="CIID-LABS" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="CIID-LABS-LOGO">
 <technologies>
 <technology name=""/>
 </technologies>
